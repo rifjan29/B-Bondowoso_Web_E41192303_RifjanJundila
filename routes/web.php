@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['namespace' => 'Frontend'], function(){
+    Route::resource('/', 'FrontendController');
+});
+Route::group(['namespace' => 'Backend'], function(){
+    Route::resource('dashboard', 'BackendController');
 });
