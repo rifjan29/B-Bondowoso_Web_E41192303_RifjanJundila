@@ -14,7 +14,9 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $nama = 'Rifjan Jundila';
+        $pelajaran = ['Test Lagi','test lagi'];
+        return view('index', compact('pelajaran'))->with('nama',$nama);
     }
 
     /**
